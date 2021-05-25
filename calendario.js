@@ -35,8 +35,8 @@ fwdBtn= document.createElement('button')
   divTitle.appendChild(fwdBtn);
   }
 
+    //secrea el div de los dias de la semana y se asignan a container calendar
   //inicia la insercion de los divs que contendran los datos de la semana
-  function createSemana(){
     const domingo =  document.createElement('div')
     domingo.innerHTML ='Domingo' 
     domingo.className+= ' dia-semana'
@@ -65,11 +65,11 @@ fwdBtn= document.createElement('button')
     sabado.innerHTML= 'Sábado'
     sabado.className+= ' dia-semana'
 
-    //se agrega la propiedad container al calendario
-    //secrea el div de los dias de la semana y se asignan a container calendar
 let semana = document.createElement('div')
    semana.id = 'semana'
     semana.append(lunes, martes,miercoles,jueves,viernes,sabado,domingo);
+  function createSemana(){
+    //se agrega la propiedad container al calendario
 containerCalendar.appendChild(semana);
 }//fin de la funcion semana 
 
@@ -162,6 +162,7 @@ fwd();
 botones();
 
 //Estilos y tal
+//
 //seccion main
 main.style.height = '15vh';
 main.style.width= '90vw';
@@ -169,21 +170,30 @@ main.style.position = 'relative';
 main.style.left= '50%';
 main.style.transform= 'translateX(-50%)';
 main.style.display= 'flex';
-mai
+main.style.flexWrap = 'wrap';
 
-//seccion titulo
+//seccion titulo del mes
 divTitle.style.position = 'relative';
 divTitle.style.width = '100%';
-divTitle.style.backgroundColor = 'goldenrod';
 divTitle.style.marginTop = '4vh';
 divTitle.style.marginLeft = '2vw';
 divTitle.style.marginRight = '2vw';
+divTitle.style.backgroundColor = 'palevioletred'
+divTitle.style.display= 'flex';
+divTitle.style.justifyContent = 'center';
+divTitle.style.alignItems = 'center';
 
+//contenedor dias de la semana
+containerCalendar.style.width = '100%';
+
+//dias de la  semana
+semana.style.width = '100%'; 
+semana.style.backgroundColor = 'goldenrod';
+semana.style.display= 'flex';
+semana.style.justifyContent = 'space-evenly';
 
 para.style.weight = 'bold';
 para.style.fontSize = '1.3rem';
-para.style.position = 'relative';
-para.style.width = '100%';
 }//fin de la funcion calendario
 //
 //
