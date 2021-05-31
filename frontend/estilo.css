@@ -4,15 +4,17 @@ button:hover{
 }
 /*keyframes en general*/
 @keyframes diaAnimado{
-	0%{text-align:center;background-color:#fff;color:tomato;font-size:1.3rem;}
+	0%{font-weight:bold;text-align:center;background-color:#fff;color:tomato;font-size:1.3rem;}
 	100%{font-weight:bold;text-align:center;background-color:#f5c5f4;font-size:1.8rem;}
 }
 @keyframes botonAnimacion{
 	0%{font-size:3.5rem;}
+	30%{font-weight:bold;font-size:4.3rem;}
+	60%{font-size:3.7rem;}
 	100%{font-weight:bold;font-size:4.8rem;}
 }
 .fwd:hover,.back:hover{
-	animation: 3.2s infinite alternate botonAnimacion;
+	animation: 1.2s infinite alternate botonAnimacion;
 }
 .espacio-trabajodiaPad{
 	background-color: #acacac !important;

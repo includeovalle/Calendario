@@ -240,10 +240,11 @@ ActivarCalendario.style.fontSize = '1.5rem';
 ActivarCalendario.style.color = 'white';
 
 ActivarCalendario.addEventListener('click', ()=>{
+	ActivarCalendario.innerHTML = "Click &#128197 fecha actual";
 	let texto = document.querySelector('.instrucciones');
 	texto.innerHTML = "Al dar click en los días del calendario se creará un apartado en la parte inferior de la página"
 	texto.style.color = 'white';
 document.body.style.backgroundColor = "#635365";
-document.title = "Elaboro: Carlos Raul Amaro Ovalle";
+	document.title = ' Elaboro: Carlos Raul Amaro Ovalle';
 ActivarCalendario.style.backgroundColor = 'transparent';
 })
