@@ -120,19 +120,37 @@ ActivarCalendario.addEventListener('click',()=>{
 					diaAgregado.innerHTML = i- paddingDay;
 					diaAgregado.addEventListener('click',()=>{
 						//funcion de creacion del area de trbajo veamos si podemos llamar funciones desde aqui
-						console.log("clickeado")
 						let zonaTrabajo = document.createElement('div');
 
-						let tituloMes = document.querySelector('.parrafoTitulo').innerText = `${dt.toLocaleDateString('es-mx',{month:'long'})}` + " ";
-							console.log("clickeado")
-							console.log("anio: ",anio) 
+						let tituloMes = document.querySelector('.parrafoTitulo').innerText = `${dt.toLocaleDateString('es-mx',{month:'long'})}` + " ";//esta linea transforma el month a texto
 							zonaTrabajo.className+= ' dia-trabajo'
 							zonaTrabajo.id= 'diaTrabajo'
+
+							//creando el form
+							let mainForm = document.createElement('form');
+							mainForm.method = "POST"
+							mainForm.action="/api/asigna-trabajo";
+							mainForm.className+= "mainFormClass"
+							 
+							let subBtn = document.createElement('button');
+							subBtn.className += 'form-btn';
+							subBtn.innerText = "Registrar";
+							subBtn.type = "submit";
+
+							let timeDate = new Date();
+							let time = timeDate.toTimeString();
+							let dateac = document.createElement('input');
+							dateac.value = (`${i-paddingDay} / ${tituloMes} / ${anio} hora: ${time}`);
+							dateac.className = 'date-input';
+							dateac.readOnly = true;
+
+
 							//a zona trabajo se le hace el append del contador - los dias de
 							//padding para que muestre el mismo numero que el 
 							//elemento dentro del html
-							zonaTrabajo.append(`${tituloMes} / ${i-paddingDay} / ${anio}
-							=> de aca se crea el formulario y se agrega a la Bd` )
+							mainForm.append(subBtn);
+							mainForm.append(dateac)
+							zonaTrabajo.append(mainForm)
 							main.appendChild(zonaTrabajo);
 
 						}) 
