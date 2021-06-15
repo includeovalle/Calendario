@@ -221,6 +221,7 @@ ActivarCalendario.addEventListener('click',()=>{
 
 
 			//dias de la  semana
+			semana.className+= " semana-titulo"
 			semana.style.display= 'flex';
 			semana.style.justifyContent = 'space-around';
 			semana.style.gridRows = '1/2';

@@ -65,3 +65,38 @@ border:none;
 	position:relative;
 	border:none;
 }
+
+.dia-semana{
+	position:relative;
+	width:100%;
+	left:0;
+
+}
+@media(max-width:600px){
+.mainSeccion{
+width:400px;
+}
+.container-calendar{
+	grid-template-rows:auto repeat(6,50px) !important;
+
+}
+.dia-semana{
+
+	font-size:70%;
+	width:50%;
+}
+.espacio-trabajo{
+
+}
+.espacio-trabajodiaPad{
+}
+.main-titulo{
+	height:30% !important;
+
+}
+.semana-titulo{
+	font-size: 1rem !important;
+	width:100%;
+
+}
+}
